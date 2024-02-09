@@ -1,30 +1,5 @@
 #include "push_swap.h"
 
-void	count_cost(t_n *head, size_t size)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	if (size % 2 == 0)
-		j = 1;
-	while (head)
-	{
-		if (i <= size / 2)
-		{
-			head->cost = i++;
-			head->above = true;
-		}
-		else
-		{
-			head->above = false;
-			head->cost = size / 2 - j++;
-		}
-		head = head->next;
-	}
-}
-
 void	put_nulls(t_n *head, char c)
 {
 	if (c == 'b')
@@ -44,27 +19,6 @@ void	put_nulls(t_n *head, char c)
 		}
 	}
 }
-
-/* Looks for closest bigger target inside B stack
- * to put the newly pushed node after it (pb, rb)
-static void	find_bigger_target_in_b(t_n *a, t_n *b, size_t i, t_n **b_cpy)
-{
-	while (a)
-	{
-		while (b)
-		{
-			if ((b->i - a->i) > 0 && (b->i - a->i) < i)
-			{
-				i = b->i - a->i;
-				a->bigger_target = b;
-			}
-			b = b->next;
-		}
-		a = a->next;
-		b = *b_cpy;
-		i = SIZE_MAX;
-	}					
-}*/
 
 /* Looks for closest smaller node inside stack B
  * to place the newly pushed node on top of it (pb) */

@@ -21,7 +21,8 @@ SRCS :=	l_main.c \
 	ps_rrr_opers.c \
 	sort_stack_v2.c \
 	sort_small_stack.c \
-	max_free.c \
+	sort_utils.c \
+	max_min.c \
 	from_a_to_b.c \
 	from_a_to_b_move.c \
 	from_a_to_b_rotate_separately.c \
@@ -29,7 +30,9 @@ SRCS :=	l_main.c \
 	from_b_to_a_move.c \
 	from_b_to_a_rotate_separately.c \
 	rotate_a_in_order.c \
-	count_words.c
+	count_words.c \
+	free.c \
+	handle_split.c
 
 OBJS :=	$(SRCS:.c=.o)
 CC := cc

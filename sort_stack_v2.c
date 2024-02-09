@@ -1,29 +1,14 @@
 #include "push_swap.h"
 
-size_t	find_min(t_n *head, size_t min)
-{
-	while (head)
-	{
-		if (head->i < min)
-			min = head->i;
-		head = head->next;
-	}
-	return (min);
-}
-
-t_n	*find_min_node(t_n *head)
-{
-	t_n	*min;
-
-	min = head;
-	head = head->next;
-	while (head)
-	{
-		if (min->i > head->i)
-			min = head;
-		head = head->next;
-	}
-	return (min);
+void	sort_three_a(t_n **head, size_t max)
+{	
+	max = find_max(*head);
+	if ((*head)->next->i == max)
+		rra(head);
+	else if ((*head)->i == max)
+		ra(head);
+	if ((*head)->i > (*head)->next->i)
+		sa(head);
 }
 
 void	sort_three_b(t_n **head, size_t min)

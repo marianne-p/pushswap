@@ -1,15 +1,5 @@
 #include "push_swap.h"
 
-void	free_stack_a(t_n **a, t_n *temp)
-{
-	while (*a)
-	{
-		temp = (*a)->next;
-		free(*a);
-		*a = temp;
-	}
-}
-
 int	is_sorted(int *num, size_t size)
 {
 	size_t	i;
@@ -34,7 +24,7 @@ int	is_list_sorted(t_n *head)
 	}
 	return (1);
 }
-
+/*
 unsigned long long	dec_to_bi(unsigned int	decimal_num) 
 {
     unsigned long long	i;
@@ -51,7 +41,7 @@ unsigned long long	dec_to_bi(unsigned int	decimal_num)
         i *= 10;
     }
     return (binary_num);
-}
+}*/
 
 t_n	*find_last_node(t_n *head)
 {

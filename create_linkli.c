@@ -12,16 +12,6 @@
 
 #include "push_swap.h"
 
-void	free_split(char **split)
-{
-	int	i;
-
-	i = 0;
-	while (split[i])
-		free(split[i++]);
-	free(split);
-}
-
 static int	find_index(int	num, t_src *a, int i)
 {
 	while (i < a->size)

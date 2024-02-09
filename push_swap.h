@@ -35,11 +35,13 @@ void	quick_sort(int	*arr, int low, int high);
 int	is_sorted(int *num, size_t size);
 int	is_list_sorted(t_n *head);
 t_n	*find_last_node(t_n *head);
+int	*handle_split_input(int count, char **split, int *size, char *str);
 /*create stack*/
-unsigned long long	dec_to_bi(unsigned int	decimal_num);
+//unsigned long long	dec_to_bi(unsigned int	decimal_num);
 t_n	*create_linkli(t_src *a, int i);
 int	*radix_sort(int *src, size_t size);
 int	count_words(char **s);
+void	print_t_n(t_n *head);
 /*operations*/
 void	pa(t_n **a_head, t_n **b_head);
 void	pb(t_n **a_head, t_n **b_head);
@@ -54,11 +56,11 @@ t_n	*find_prev(t_n *head);
 void	rrb(t_n **b_head);
 void	rra(t_n **a_head);
 void	rrr(t_n **a_head, t_n **b_head);
-/*other func*/
-void	print_t_n(t_n *head);
+/*free func*/
 void	free_stack_a(t_n **a, t_n *temp);
 void	free_split_src(int *src, char **split);
 void	free_split(char **split);
+void	free_src(t_src	**a);
 //void	sort_stack(t_n *a_head);
 size_t	find_max(t_n *head);
 t_n	*find_max_node(t_n *head);
