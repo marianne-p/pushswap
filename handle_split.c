@@ -47,5 +47,6 @@ int	*handle_split_input(int count, char **split, int *size, char *str)
 		free_split_src(src, split);
 		return (0);
 	}
+	free_split(split);
 	return (src);
 }

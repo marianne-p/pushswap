@@ -6,7 +6,7 @@
 /*   By: mpihur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 19:45:39 by mpihur            #+#    #+#             */
-/*   Updated: 2024/01/30 21:03:04 by mpihur           ###   ########.fr       */
+/*   Updated: 2024/03/07 14:15:13 by mpihur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	main(int argc, char **argv)
 	if (src == NULL)
 		return (0);
 	push_swap(src, size);
-	if (argc == 2)
-		free_split(split);
+	/*if (argc == 2)
+		free_split(split);*/
 	return (0);
 }
