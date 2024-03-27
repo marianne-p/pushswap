@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   from_b_to_a.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpihur <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 17:08:18 by mpihur            #+#    #+#             */
+/*   Updated: 2024/03/27 17:08:20 by mpihur           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	find_bigger_target_in_a(t_n *a, t_n *b, size_t i, t_n **a_cpy)
@@ -16,7 +28,7 @@ static void	find_bigger_target_in_a(t_n *a, t_n *b, size_t i, t_n **a_cpy)
 		b = b->next;
 		a = *a_cpy;
 		i = SIZE_MAX;
-	}				
+	}
 }
 /*
 static void	find_smaller_target_in_a(t_n *a, t_n *b, size_t i, t_n **a_cpy)
@@ -38,7 +50,8 @@ static void	find_smaller_target_in_a(t_n *a, t_n *b, size_t i, t_n **a_cpy)
 	}					
 }*/
 
-static t_n	*pick_cheapest_b_to_a(t_n **b_cpy, t_n *b, t_n *cheapest, size_t lowest)
+static t_n	*pick_cheapest_b_to_a(t_n **b_cpy, t_n *b,
+t_n *cheapest, size_t lowest)
 {
 	while (b)
 	{

@@ -6,13 +6,13 @@
 /*   By: mpihur <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 19:28:28 by mpihur            #+#    #+#             */
-/*   Updated: 2024/01/30 18:38:31 by mpihur           ###   ########.fr       */
+/*   Updated: 2024/03/27 17:02:03 by mpihur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	find_index(int	num, t_src *a, int i)
+static int	find_index(int num, t_src *a, int i)
 {
 	while (i < a->size)
 	{

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   from_a_to_b_move.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpihur <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 17:06:22 by mpihur            #+#    #+#             */
+/*   Updated: 2024/03/27 17:06:30 by mpihur           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rr_both_above(t_n **a, t_n **b, t_n *cheapest)
@@ -11,7 +23,7 @@ void	rr_both_above(t_n **a, t_n **b, t_n *cheapest)
 		}
 		while (*b != cheapest->smaller_target)
 			rb(b);
-		}
+	}
 	else
 	{
 		while (cheapest->smaller_target->cost > 0)
@@ -35,7 +47,7 @@ void	rrr_both_below(t_n **a, t_n **b, t_n *cheapest)
 		}
 		while (*b != cheapest->smaller_target)
 			rrb(b);
-		}
+	}
 	else
 	{
 		while (cheapest->smaller_target->cost > 0)
@@ -70,7 +82,7 @@ void	rr_above_big_target(t_n **a, t_n **b, t_n *cheapest)
 		rb(b);
 		while (*a != cheapest)
 			ra(a);
-	}	
+	}
 }
 
 void	rrr_below_big_target(t_n **a, t_n **b, t_n *cheapest)
@@ -101,16 +113,16 @@ void	rrr_below_big_target(t_n **a, t_n **b, t_n *cheapest)
 void	move_to_b(t_n **a, t_n **b, t_n *cheapest)
 {
 	if (cheapest->above == true && cheapest->bigger_target == NULL
-			&& cheapest->smaller_target->above == true)
+		&& cheapest->smaller_target->above == true)
 		rr_both_above(a, b, cheapest);
 	else if (cheapest->above == false && cheapest->bigger_target == NULL
-			&& cheapest->smaller_target->above == false)
+		&& cheapest->smaller_target->above == false)
 		rrr_both_below(a, b, cheapest);
 	else if (cheapest->smaller_target == NULL && cheapest->above == true
-			&& cheapest->bigger_target->above == true)
+		&& cheapest->bigger_target->above == true)
 		rr_above_big_target(a, b, cheapest);
 	else if (cheapest->smaller_target == NULL && cheapest->above == false
-			&& cheapest->bigger_target->above == false)
+		&& cheapest->bigger_target->above == false)
 		rrr_below_big_target(a, b, cheapest);
 	else
 		rotate_separately(a, b, cheapest);

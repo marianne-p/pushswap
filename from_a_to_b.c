@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   from_a_to_b.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpihur <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 17:04:45 by mpihur            #+#    #+#             */
+/*   Updated: 2024/03/27 17:04:52 by mpihur           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	put_nulls(t_n *head, char c)
@@ -38,7 +50,7 @@ static void	find_smaller_target_in_b(t_n *a, t_n *b, size_t i, t_n **b_cpy)
 		a = a->next;
 		b = *b_cpy;
 		i = SIZE_MAX;
-	}					
+	}
 }
 
 /* Counts total cost of moves to find the optimal move from stack A to B*/
@@ -88,7 +100,6 @@ void	from_a_to_b(t_n **a, t_n **b, t_n *cheapest_a)
 	{
 		count_cost(*a, count_nodes(*a, 0));
 		count_cost(*b, count_nodes(*b, 0));
-		//find_bigger_target_in_b(*a, *b, SIZE_MAX, b);
 		put_nulls(*a, 'b');
 		find_smaller_target_in_b(*a, *b, SIZE_MAX, b);
 		cheapest_a = pick_cheapest(a, *a, NULL, SIZE_MAX);

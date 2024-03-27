@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   from_b_to_a_move.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpihur <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/27 17:09:23 by mpihur            #+#    #+#             */
+/*   Updated: 2024/03/27 17:09:26 by mpihur           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	rrr_move_to_bigger_in_a(t_n **a, t_n **b, t_n *cheapest)
@@ -86,17 +98,17 @@ static void	rr_move_to_smaller_in_a(t_n **a, t_n **b, t_n *cheapest)
 void	move_to_a(t_n **a, t_n **b, t_n *cheapest)
 {
 	if (cheapest->smaller_target == NULL && cheapest->above == true
-			&& cheapest->bigger_target->above == true)
+		&& cheapest->bigger_target->above == true)
 		rr_move_to_bigger_in_a(a, b, cheapest);
 	else if (cheapest->smaller_target == NULL && cheapest->above == false
-			&& cheapest->bigger_target->above == false)
+		&& cheapest->bigger_target->above == false)
 		rrr_move_to_bigger_in_a(a, b, cheapest);
 	else if (cheapest->bigger_target == NULL && cheapest->above == true
-			&& cheapest->smaller_target->above == true)
+		&& cheapest->smaller_target->above == true)
 		rr_move_to_smaller_in_a(a, b, cheapest);
 	else if (cheapest->bigger_target == NULL && cheapest->above == false
-			&& cheapest->smaller_target->above == false)
+		&& cheapest->smaller_target->above == false)
 		rrr_move_to_smaller_in_a(a, b, cheapest);
 	rotate_separately_target_a(a, b, cheapest);
-	pa(a, b);		
+	pa(a, b);
 }
